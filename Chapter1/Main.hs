@@ -14,6 +14,8 @@ saluta primaPersona secondaPersona = primaPersona <> " dice ciao a " <> secondaP
 
 salutaInfix secondaPersona = (`saluta` secondaPersona)
 
+bongo = "trippolo"
+
 -- salutation = "Hello"
 -- person = "Bongo"
 
