@@ -1,6 +1,7 @@
 -- puoi lanciare anche facendo runhaskell + nome file
 
 module Main where
+import Language.Haskell.TH (multiIfE)
 
 -- main = print "Hello, World!"
 
@@ -14,7 +15,27 @@ saluta primaPersona secondaPersona = primaPersona <> " dice ciao a " <> secondaP
 
 salutaInfix secondaPersona = (`saluta` secondaPersona)
 
-bongo = "trippolo"
+flipme fn arg1 arg2 = fn arg2 arg1
+
+sayThree a b c = a <> " " <> b <> " " <> c
+
+addOne num = num + 1
+timesTwo num = num * 2
+squared num = num * num
+minusFive num = num - 5
+
+addTwo = addOne . addOne 
+
+multiplyFive = \x -> x * 5
+
+addTwoThenMultiplyFive = multiplyFive . addTwo
+
+addTwoThenMultiplyFive' x = multiplyFive . addTwo $ x
+
+
+multi5ThenAdd2 = addTwo . multiplyFive
+
+bongo = "trippolo2"
 
 -- salutation = "Hello"
 -- person = "Bongo"
