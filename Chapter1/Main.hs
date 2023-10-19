@@ -35,7 +35,25 @@ addTwoThenMultiplyFive' x = multiplyFive . addTwo $ x
 
 multi5ThenAdd2 = addTwo . multiplyFive
 
+insulta come chi = come <> " " <> chi
+
+insulta' come =((come <> " ")<>)
+
+insulta'' come = (<>) (come <> " ")
+
+insulta''' = (<>) . (\come -> come <> " ")
+
+insulta4 = (<>) . (<> " ")
+
 bongo = "trippolo2"
+(<+>) a b = a + b
+
+infixl 7 `divide`
+divide = (/)
+
+infixr 7 `divide'`
+divide' = (/)
+
 
 -- salutation = "Hello"
 -- person = "Bongo"
