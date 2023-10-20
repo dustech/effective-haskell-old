@@ -21,12 +21,14 @@ expandTo fizzBuzzCount =
   [1 .. fizzBuzzCount]
 
 fizzy num
-  | evenlyBy3 && not evenlyBy5 = "fizz"
-  | evenlyBy5 && not evenlyBy3 = "buzz"
-  | otherwise = "fizzbuzz"
+  | evenlyByBoth = "fizzbuzz"
+  | evenlyBy3 = "fizz"
+  | evenlyBy5 = "buzz"  
+  | otherwise = show num
   where 
     evenlyBy3 = num `mod` 3 == 0
     evenlyBy5 = num `mod` 5 == 0
+    evenlyByBoth = num `mod` 15 == 0
 
 fizzBuzz fizzBuzzCount =
   map fizzy $ expandTo fizzBuzzCount 
