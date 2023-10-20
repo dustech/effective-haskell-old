@@ -33,5 +33,10 @@ fizzy num
 fizzBuzz fizzBuzzCount =
   map fizzy $ expandTo fizzBuzzCount 
 
+fizzBuzz'  =
+  map fizzy . expandTo  
+
+fiz =
+  foldr (<>) [] . fizzBuzz' 
 
 main = print "ciccio"
