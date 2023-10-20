@@ -1,7 +1,6 @@
 -- puoi lanciare anche facendo runhaskell + nome file
 
 module Main where
-import Language.Haskell.TH (multiIfE)
 
 -- main = print "Hello, World!"
 
