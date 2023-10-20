@@ -10,7 +10,7 @@ guardSize num
   | num < 10 = "numero medio"
   | num < 100 = "numero cicciotto"
   | num < 1000 = "numero molto grosso!"
-  | otherwise = "numero immenso!!"
+  | otherwise = "numero immenso!! " <> show num
 
 bonzo myBonzo | otherwise = "Bonzo sei " <> myBonzo
 
