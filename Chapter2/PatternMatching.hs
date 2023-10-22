@@ -9,3 +9,9 @@ addValues (first:rest) = first + (addValues rest)
 printHead [] = "vuoto di brutto"
 printHead lst@(head:_tail) =
   "la testa di " <> show lst <> " e' " <> show head
+
+ciboPreferitoDi persona = 
+  case persona of
+    "Pino" -> "salsiccia"
+    "Gino" -> "merluzzo"
+    name -> "pizza"
