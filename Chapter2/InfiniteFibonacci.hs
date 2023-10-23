@@ -13,8 +13,8 @@ fibPro n
         | current == target = a + b
         | otherwise         = fib' b (a + b) (current + 1) target
 
-pairFib index =
-     (index,fibPro index)
+pairFib fibStrategy index =
+     (index, fibStrategy index)
 
   
 
@@ -22,6 +22,23 @@ pairFib index =
 
 -- list di tutti i numeri di fibonacci
 -- non lanciare da sola perche cicla infinito
-fibs = map pairFib [0..]
+fibs algoritm = map ( pairFib algoritm ) [0..]
 
-smallFibs = takeWhile (\(f,s) -> f < 20) fibs
+smallFibs x = takeWhile (\(f,s) -> f < x) $ fibs fibPro
+
+lazyFib fstFib sndFib =
+  fstFib : lazyFib sndFib nextFib
+  where
+    nextFib = fstFib + sndFib
+
+lazyFibs = lazyFib 0 1
+
+-----------------------
+
+ultraLazyfib = 0 : 1 : magic ultraLazyfib (tail ultraLazyfib)
+  where
+    magic (x:xs) (y:ys) = x + y : magic xs ys
+
+pairer = zip [1..]  
+
+ultraLazyFibs x = takeWhile (\(i,v) -> i <= x) $ pairer ultraLazyfib
