@@ -20,3 +20,5 @@ myAs = [myA] <> myS
 myAs' :: String
 myAs' = myA : myS
 
+addThreeNumbers a b c = a + b + c 
+
